@@ -23,6 +23,9 @@ inputs:
   skip_rules:
     description: 'one or more rules to skip while scanning (example: "ruleID1,ruleID2")'
     required: false
+  severity:
+    description: 'minimum severity level of the policy violations to be reported by terrascan'
+    required: false
   config_path:
     description: 'config file path'
     required: false
@@ -58,6 +61,7 @@ runs:
     - ${{ inputs.policy_path }}
     - ${{ inputs.policy_type }}
     - ${{ inputs.skip_rules }}
+    - ${{ inputs.severity }}
     - ${{ inputs.config_path }}
     - ${{ inputs.only_warn }}
     - ${{ inputs.sarif_upload }}

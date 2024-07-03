@@ -9,6 +9,7 @@ echo "INPUT_NON_RECURSIVE=${NON_RECURSIVE}"
 echo "INPUT_POLICY_TYPE=${INPUT_POLICY_TYPE}"
 echo "INPUT_POLICY_PATH=${INPUT_POLICY_PATH}"
 echo "INPUT_SKIP_RULES=${INPUT_SKIP_RULES}"
+echo "INPUT_SEVERITY=${INPUT_SEVERITY}"
 echo "INPUT_CONFIG_PATH=${INPUT_CONFIG_PATH}"
 echo "INPUT_SARIF_UPLOAD=${INPUT_SARIF_UPLOAD}"
 echo "INPUT_VERBOSE=${INPUT_VERBOSE}"
@@ -72,6 +73,9 @@ if [ "x${INPUT_POLICY_TYPE}" != "x" ]; then
 fi
 if [ "x${INPUT_SKIP_RULES}" != "x" ]; then
     args="${args} --skip-rules='${INPUT_SKIP_RULES}'"
+fi
+if [ "x${INPUT_SEVERITY}" != "x" ]; then
+    args="${args} --severity ${INPUT_SEVERITY}"
 fi
 if [ "x${INPUT_CONFIG_PATH}" != "x" ]; then
     args="${args} -c ${INPUT_CONFIG_PATH}"
