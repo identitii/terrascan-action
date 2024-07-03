@@ -72,7 +72,7 @@ if [ "x${INPUT_POLICY_TYPE}" != "x" ]; then
     args="${args} -t ${INPUT_POLICY_TYPE}"
 fi
 if [ "x${INPUT_SKIP_RULES}" != "x" ]; then
-    args="${args} --skip-rules='${INPUT_SKIP_RULES}'"
+    args="${args} --skip-rules=\"${INPUT_SKIP_RULES}\""
 fi
 if [ "x${INPUT_SEVERITY}" != "x" ]; then
     args="${args} --severity ${INPUT_SEVERITY}"
